@@ -85,7 +85,8 @@ class IndexController {
             try {
                 //系统启动时获取数据库数据，设置到公用静态集合sysSettingMap
                 SysSettingVo sysSettingVo = sysSettingService.get("1").getData();
-                sysSettingVo.setUserInitPassword(null);//隐藏部分属性
+                //隐藏部分属性
+                sysSettingVo.setUserInitPassword(null);
                 SysSettingUtil.setSysSettingMap(sysSettingVo);
 
                 //获取本机内网IP
@@ -137,7 +138,8 @@ class IndexController {
 
         //登录用户
         SysUserVo sysUserVo = sysUserService.findByLoginName(SecurityUtil.getLoginUser().getUsername()).getData();
-        sysUserVo.setPassword(null);//隐藏部分属性
+        //隐藏部分属性
+        sysUserVo.setPassword(null);
         modelAndView.addObject( "loginUser", sysUserVo);
 
         //登录用户系统菜单
