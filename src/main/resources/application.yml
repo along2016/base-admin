@@ -7,7 +7,7 @@ server:
 #基础配置
 spring:
   profiles:
-    active: ${BASE_ADMIN:dev} #选择配置分支，先读取系统环境变量，如果没有则默认值为 dev
+    active: ${BASE_ADMIN:home} #选择配置分支，先读取系统环境变量，如果没有则默认值为 dev
   application:
     name: base-admin
 
@@ -31,35 +31,3 @@ spring:
 #是否需要输入验证码
 captcha:
   enable: false
-
----
-##### dev 配置 #######
-spring:
-  profiles: dev
-
-  #数据库配置
-  datasource:
-    url: jdbc:mysql://192.168.10.134:3306/base_admin?serverTimezone=GMT%2B8&characterEncoding=utf-8
-    username: root
-    password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
-#是否需要输入验证码
-captcha:
-  enable: false
-
----
-##### prod 配置 #######
-spring:
-  profiles: prod
-
-  #数据库配置
-  datasource:
-    url: jdbc:mysql://192.168.10.134:3306/base_admin?serverTimezone=GMT%2B8&characterEncoding=utf-8
-    username: root
-    password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
-#是否需要输入验证码
-captcha:
-  enable: true

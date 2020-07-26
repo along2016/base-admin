@@ -1,0 +1,8 @@
+##### dev 配置 #######
+spring:
+  #数据库配置
+  datasource:
+    url: jdbc:mysql://192.168.10.134:3306/base_admin?serverTimezone=GMT%2B8&characterEncoding=utf-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
